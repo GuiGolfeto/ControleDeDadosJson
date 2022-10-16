@@ -11,19 +11,21 @@ if (isset($_POST['btn'])) {
 	$sexo = filter_input(INPUT_POST, 'sexo');
 
 	$data = array(
-		'nome' => $name,
-		'endereco' => $endereco,
-		'bairro' => $bairro,
-		'cidade' => $cidade,
-		'estado' => $estado,
-		'cep' => $cep,
-		'nasc' => $nasc,
-		'sexo' => $sexo,
+		'data' => array(
+			'nome' => $name,
+			'endereco' => $endereco,
+			'bairro' => $bairro,
+			'cidade' => $cidade,
+			'estado' => $estado,
+			'cep' => $cep,
+			'nasc' => $nasc,
+			'sexo' => $sexo,
+		),
 	);
 
 	$arquivo = 'data.json';
 	$json = json_encode($data);
-	$file = file_put_contents($arquivo, $json, FILE_APPEND | FILE_APPEND);
+	$file = fopen($arquivo, 'a');
 
 	function makeJson($file, $json){
 		fwrite($file, $json);
