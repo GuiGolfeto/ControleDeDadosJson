@@ -1,38 +1,33 @@
 <?php
 
 if (isset($_POST['btn'])) {
-	$name = filter_input(INPUT_POST, 'nomeCompleto');
-	$endereco = filter_input(INPUT_POST, 'endereco');
-	$bairro = filter_input(INPUT_POST, 'bairro');
-	$cidade = filter_input(INPUT_POST, 'cidade');
-	$estado = filter_input(INPUT_POST, 'estado');
-	$cep = filter_input(INPUT_POST, 'cep');
-	$nasc = filter_input(INPUT_POST, 'nasc');
-	$sexo = filter_input(INPUT_POST, 'sexo');
+	$data = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+	unset($data['btn']);
 
-	$data = array(
-		'data' => array(
-			'nome' => $name,
-			'endereco' => $endereco,
-			'bairro' => $bairro,
-			'cidade' => $cidade,
-			'estado' => $estado,
-			'cep' => $cep,
-			'nasc' => $nasc,
-			'sexo' => $sexo,
-		),
-	);
+	if (file_exists("data.json")) {
+		$arquivo = file_get_contents("data.json");
+		$arquivo = json_decode($arquivo, true);
+		array_push($arquivo, $data);
 
-	$arquivo = 'data.json';
-	$json = json_encode($data);
-	$file = fopen($arquivo, 'a');
+		$json = json_encode($arquivo);
+		if (file_put_contents("data.json", $json)) {
+			header('Location: confirm.php');
+		} else {
+			echo "não foi possivel atualizar!";
+		}
+	} else {
 
-	function makeJson($file, $json){
-		fwrite($file, $json);
-		fclose($file);
+		$data = array(0 => $data);
+
+		$json = json_encode($data);
+		if (file_put_contents("data.json", $json)) {
+			header('Location: confirm.php');
+		} else {
+			echo " não foi possivel cadastrar!,chame o cara!";
+		}
 	}
-	header('Location: confirm.php');
-	makeJson($file, $json);
+
+	
 }
 
 ?>

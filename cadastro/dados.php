@@ -1,14 +1,10 @@
 <?php
 
 $json = file_get_contents("data.json");
-$data = json_decode($json);
+$data = json_decode($json, true);
 
 
-foreach ($data as $key => $a) {
-    echo "{$key} => {$a}";
-    echo '<br>';
-}
-
+var_dump($data);
 ?>
 
 <link rel="stylesheet" type="text/css" href="../css/main.css">

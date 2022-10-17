@@ -1,23 +1,32 @@
-{
-    "data": {
-        "nome": "aaaaaaaaa",
-        "endereco": "aaaaaaaaaaa",
-        "bairro": "aaaaaaa",
-        "cidade": "aaaaaaa",
-        "estado": "RJ",
+[
+    {
+        "nomeCompleto": "aaaaaa",
+        "endereco": "aaaaaaa",
+        "bairro": "aaaaaaaaa",
+        "cidade": "aaaaaaaaa",
+        "estado": "PE",
         "cep": "16800-000",
-        "nasc": "2222-05-09",
+        "nasc": "2222-02-22",
         "sexo": "Masculino"
-    }
-}{
-    "data": {
-        "nome": "bbbb",
-        "endereco": "bbbbbbb",
-        "bairro": "bbbbbb",
+    },
+    {
+        "nomeCompleto": "Guilherme",
+        "endereco": "aaaaaaa",
+        "bairro": "Golfeto",
+        "cidade": "mirandopolis",
+        "estado": "SP",
+        "cep": "16800-000",
+        "nasc": "2222-02-22",
+        "sexo": "LGBT"
+    },
+    {
+        "nomeCompleto": "bbb",
+        "endereco": "bbbbb",
+        "bairro": "bbbbb",
         "cidade": "bbbbbb",
-        "estado": "RJ",
+        "estado": "PE",
         "cep": "16800-000",
-        "nasc": "2222-05-09",
+        "nasc": "2222-02-22",
         "sexo": "Masculino"
     }
-}
+]
