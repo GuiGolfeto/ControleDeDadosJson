@@ -4,7 +4,7 @@
 <div class="container">
   <div class="container-login">
     <div class="wrap-login">
-      <form class="login-form" id="ocult">
+      <form class="login-form">
         <span class="login-form-title">
           Deseja cadastrar mais um usuario?
         </span>

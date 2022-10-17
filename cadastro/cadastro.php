@@ -52,12 +52,7 @@ if (isset($_POST['btn'])) {
 			<div class="wrap-login">
 				<!-- primeiro form -->
 
-
-				<!-- NA ACTION REDIRECIONEI PARA O ARQUIVO QUE IRÁ CADASTRAR -->
-				<form class="login-form" action="" method="post" id="view">
-					<!-- NA ACTION REDIRECIONEI PARA O ARQUIVO QUE IRÁ CADASTRAR -->
-
-
+				<form class="login-form" action="" method="post" autocomplete="off">
 					<span class="login-form-title">
 						Faça o seu cadastro
 					</span>

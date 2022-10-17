@@ -34,13 +34,13 @@ if (isset($_POST['btn'])) {
 	<div class="container">
 		<div class="container-login">
 			<div class="wrap-login">
-				<form class="login-form" method="POST">
+				<form class="login-form" method="post" autocomplete="off">
 					<span class="login-form-title">
 						Faça o login
 					</span>
 
 					<div class="wrap-input margin-top-35 margin-bottom-35">
-						<input class="input-form" type="text" name="name" id="name" autocomplete="off">
+						<input class="input-form" type="text" name="name" id="name" >
 						<span class="focus-input-form" data-placeholder="Nome Completo"></span>
 					</div>
 
