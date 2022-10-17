@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['btn'])){
+if (isset($_POST['btn'])) {
 	$name = filter_input(INPUT_POST, 'name');
 	$bairro = filter_input(INPUT_POST, 'bairro');
 
@@ -7,10 +7,12 @@ if (isset($_POST['btn'])){
 	$json = file_get_contents($arquivoJson);
 	$data = json_decode($json);
 
-	if ($name === $data->nome && $bairro === $data->bairro){
-		header('Location: ./cadastro/dados.php');
-	}else{
-		echo "<script>alert('Campo incorreto');</script>";
+	for ($i = 0; $i < count($data); $i++) {
+		if ($name === $data[$i]->nomeCompleto && $bairro === $data[$i]->bairro) {
+			header('Location: ./cadastro/dados.php');
+		} else {
+			echo "<script>alert('Campo incorreto');</script>";
+		}
 	}
 }
 ?>
@@ -18,6 +20,7 @@ if (isset($_POST['btn'])){
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<title>Login</title>
 	<meta charset="UTF-8">
@@ -25,8 +28,9 @@ if (isset($_POST['btn'])){
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body>
-	
+
 	<div class="container">
 		<div class="container-login">
 			<div class="wrap-login">
@@ -77,12 +81,12 @@ if (isset($_POST['btn'])){
 			<img src="images/login.png" width="300" height="300" class="margin-left-50" />
 		</div>
 	</div>
-	
+
 	<script>
 		let inputs = document.getElementsByClassName('input-form');
 		for (let input of inputs) {
 			input.addEventListener("blur", function() {
-				if(input.value.trim() != ""){
+				if (input.value.trim() != "") {
 					input.classList.add("has-val");
 				} else {
 					input.classList.remove("has-val");
@@ -92,4 +96,5 @@ if (isset($_POST['btn'])){
 	</script>
 
 </body>
+
 </html>

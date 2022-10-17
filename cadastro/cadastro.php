@@ -13,7 +13,7 @@ if (isset($_POST['btn'])) {
 		if (file_put_contents("data.json", $json)) {
 			header('Location: confirm.php');
 		} else {
-			echo "não foi possivel atualizar!";
+			echo "<script>alert('Não foi possivel fazer o cadastro, por favor tente novamente');</script>";
 		}
 	} else {
 
@@ -23,7 +23,7 @@ if (isset($_POST['btn'])) {
 		if (file_put_contents("data.json", $json)) {
 			header('Location: confirm.php');
 		} else {
-			echo " não foi possivel cadastrar!,chame o cara!";
+			echo "<script>alert('Não foi possivel fazer o cadastro, por favor tente novamente');</script>";
 		}
 	}
 
@@ -130,7 +130,7 @@ if (isset($_POST['btn'])) {
 							<option value="">Defina seu sexo</option>
 							<option value="Feminino">Feminino</option>
 							<option value="Masculino">Masculino</option>
-							<option value="NãoBinario">Não Binario</option>
+							<option value="NaoBinario">Não Binario</option>
 							<option value="LGBT">LGBT</option>
 						</select>
 					</div>
