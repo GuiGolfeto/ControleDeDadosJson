@@ -3,16 +3,20 @@ if (isset($_POST['btn'])) {
 	$name = filter_input(INPUT_POST, 'name');
 	$bairro = filter_input(INPUT_POST, 'bairro');
 
-	$arquivoJson = './cadastro/data.json';
-	$json = file_get_contents($arquivoJson);
-	$data = json_decode($json);
+	if (file_exists("./cadastro/data.json")) {
+		$arquivoJson = './cadastro/data.json';
+		$json = file_get_contents($arquivoJson);
+		$data = json_decode($json);
 
-	for ($i = 0; $i < count($data); $i++) {
-		if ($name === $data[$i]->nomeCompleto && $bairro === $data[$i]->bairro) {
-			header('Location: ./cadastro/dados.php');
-		} else {
-			echo "<script>alert('Campo incorreto');</script>";
+		for ($i = 0; $i < count($data); $i++) {
+			if ($name === $data[$i]->nomeCompleto && $bairro === $data[$i]->bairro) {
+				header('Location: ./cadastro/dados.php');
+			} else {
+				echo "<script>alert('Campo incorreto');</script>";
+			}
 		}
+	} else {
+		echo "<script>alert('Não temos uma base de dados no momento');</script>";
 	}
 }
 ?>
@@ -40,7 +44,7 @@ if (isset($_POST['btn'])) {
 					</span>
 
 					<div class="wrap-input margin-top-35 margin-bottom-35">
-						<input class="input-form" type="text" name="name" id="name" >
+						<input class="input-form" type="text" name="name" id="name">
 						<span class="focus-input-form" data-placeholder="Nome Completo"></span>
 					</div>
 

@@ -1,31 +1,21 @@
 [
     {
-        "nomeCompleto": "aaaaaa",
-        "endereco": "aaaaaaa",
-        "bairro": "aaaaaaaaa",
-        "cidade": "aaaaaaaaa",
-        "estado": "PE",
+        "nomeCompleto": "Guilherme Golfeto",
+        "endereco": "aaaa",
+        "bairro": "aaaaaaaa",
+        "cidade": "mirandopolis",
+        "estado": "SP",
         "cep": "16800-000",
         "nasc": "2222-02-22",
         "sexo": "Masculino"
     },
     {
-        "nomeCompleto": "Guilherme",
+        "nomeCompleto": "aaaaaaa",
         "endereco": "aaaaaaa",
-        "bairro": "Golfeto",
-        "cidade": "mirandopolis",
-        "estado": "SP",
-        "cep": "16800-000",
-        "nasc": "2222-02-22",
-        "sexo": "LGBT"
-    },
-    {
-        "nomeCompleto": "bbb",
-        "endereco": "bbbbb",
-        "bairro": "bbbbb",
-        "cidade": "bbbbbb",
-        "estado": "PE",
-        "cep": "16800-000",
+        "bairro": "aaaaaaaa",
+        "cidade": "aaaaaaaaa",
+        "estado": "AC",
+        "cep": "a111111111",
         "nasc": "2222-02-22",
         "sexo": "Masculino"
     }
